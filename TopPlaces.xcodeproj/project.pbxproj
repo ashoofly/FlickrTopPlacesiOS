@@ -14,6 +14,10 @@
 		A28ADC2F1B8E17D20045DE6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A28ADC2E1B8E17D20045DE6F /* Images.xcassets */; };
 		A28ADC321B8E17D20045DE6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A28ADC301B8E17D20045DE6F /* LaunchScreen.xib */; };
 		A28ADC3E1B8E17D20045DE6F /* TopPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC3D1B8E17D20045DE6F /* TopPlacesTests.m */; };
+		A28ADC4A1B8E19D60045DE6F /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC491B8E19D60045DE6F /* FlickrFetcher.m */; };
+		A28ADC4E1B8E1D120045DE6F /* FlickrPlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC4D1B8E1D120045DE6F /* FlickrPlacesTVC.m */; };
+		A28ADC511B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC501B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m */; };
+		A28ADC541B8F67AB0045DE6F /* FlickrThumbnailsCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC531B8F67AB0045DE6F /* FlickrThumbnailsCVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,15 @@
 		A28ADC371B8E17D20045DE6F /* TopPlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopPlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28ADC3C1B8E17D20045DE6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A28ADC3D1B8E17D20045DE6F /* TopPlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopPlacesTests.m; sourceTree = "<group>"; };
+		A28ADC471B8E19D60045DE6F /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		A28ADC481B8E19D60045DE6F /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		A28ADC491B8E19D60045DE6F /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		A28ADC4C1B8E1D120045DE6F /* FlickrPlacesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPlacesTVC.h; sourceTree = "<group>"; };
+		A28ADC4D1B8E1D120045DE6F /* FlickrPlacesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPlacesTVC.m; sourceTree = "<group>"; };
+		A28ADC4F1B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPlacesFlickrPhotosTVC.h; sourceTree = "<group>"; };
+		A28ADC501B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesFlickrPhotosTVC.m; sourceTree = "<group>"; };
+		A28ADC521B8F67AB0045DE6F /* FlickrThumbnailsCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrThumbnailsCVC.h; sourceTree = "<group>"; };
+		A28ADC531B8F67AB0045DE6F /* FlickrThumbnailsCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrThumbnailsCVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +94,13 @@
 		A28ADC201B8E17D20045DE6F /* TopPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				A28ADC251B8E17D20045DE6F /* AppDelegate.h */,
-				A28ADC261B8E17D20045DE6F /* AppDelegate.m */,
-				A28ADC281B8E17D20045DE6F /* ViewController.h */,
-				A28ADC291B8E17D20045DE6F /* ViewController.m */,
+				A28ADC4C1B8E1D120045DE6F /* FlickrPlacesTVC.h */,
+				A28ADC4D1B8E1D120045DE6F /* FlickrPlacesTVC.m */,
+				A28ADC4F1B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.h */,
+				A28ADC501B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m */,
+				A28ADC521B8F67AB0045DE6F /* FlickrThumbnailsCVC.h */,
+				A28ADC531B8F67AB0045DE6F /* FlickrThumbnailsCVC.m */,
+				A28ADC4B1B8E19DD0045DE6F /* Flickr Fetcher */,
 				A28ADC2B1B8E17D20045DE6F /* Main.storyboard */,
 				A28ADC2E1B8E17D20045DE6F /* Images.xcassets */,
 				A28ADC301B8E17D20045DE6F /* LaunchScreen.xib */,
@@ -96,6 +112,10 @@
 		A28ADC211B8E17D20045DE6F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A28ADC281B8E17D20045DE6F /* ViewController.h */,
+				A28ADC291B8E17D20045DE6F /* ViewController.m */,
+				A28ADC251B8E17D20045DE6F /* AppDelegate.h */,
+				A28ADC261B8E17D20045DE6F /* AppDelegate.m */,
 				A28ADC221B8E17D20045DE6F /* Info.plist */,
 				A28ADC231B8E17D20045DE6F /* main.m */,
 			);
@@ -117,6 +137,16 @@
 				A28ADC3C1B8E17D20045DE6F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A28ADC4B1B8E19DD0045DE6F /* Flickr Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				A28ADC471B8E19D60045DE6F /* FlickrAPIKey.h */,
+				A28ADC481B8E19D60045DE6F /* FlickrFetcher.h */,
+				A28ADC491B8E19D60045DE6F /* FlickrFetcher.m */,
+			);
+			name = "Flickr Fetcher";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28ADC4E1B8E1D120045DE6F /* FlickrPlacesTVC.m in Sources */,
+				A28ADC541B8F67AB0045DE6F /* FlickrThumbnailsCVC.m in Sources */,
 				A28ADC2A1B8E17D20045DE6F /* ViewController.m in Sources */,
 				A28ADC271B8E17D20045DE6F /* AppDelegate.m in Sources */,
+				A28ADC4A1B8E19D60045DE6F /* FlickrFetcher.m in Sources */,
 				A28ADC241B8E17D20045DE6F /* main.m in Sources */,
+				A28ADC511B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +452,7 @@
 				A28ADC431B8E17D20045DE6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A28ADC441B8E17D20045DE6F /* Build configuration list for PBXNativeTarget "TopPlacesTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +461,7 @@
 				A28ADC461B8E17D20045DE6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
