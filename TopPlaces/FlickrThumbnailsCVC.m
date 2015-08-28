@@ -9,6 +9,7 @@
 #import "FlickrThumbnailsCVC.h"
 #import "FlickrFetcher.h"
 #import "FlickrPhotoCell.h"
+#import "ImageViewController.h"
 
 #define NUM_THUMBNAILS 51
 
@@ -33,15 +34,8 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 - (void)getThumbnails
 {
@@ -118,5 +112,33 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 //    
 //}
+
+
+#pragma mark - Navigation
+
+- (void)prepareImageViewController:(ImageViewController *)ivc toDisplayPhoto:(NSDictionary *)photo {
+    ivc.imageURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatLarge];
+    ivc.title = [photo valueForKeyPath:FLICKR_PHOTO_TITLE];
+}
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([sender isKindOfClass:[FlickrPhotoCell class]]) {
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"Display Photo"]) {
+                if ([segue.destinationViewController isKindOfClass:[ImageViewController class]]) {
+                    [self prepareImageViewController:segue.destinationViewController toDisplayPhoto:self.photos[indexPath.row]];
+                    
+                }
+            }
+        }
+        
+    }
+    
+}
+
 
 @end

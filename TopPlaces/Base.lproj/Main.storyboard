@@ -81,6 +81,7 @@
                                 </view>
                                 <connections>
                                     <outlet property="imageView" destination="fSe-KB-MLP" id="WsA-uc-hZW"/>
+                                    <segue destination="go6-ey-6Z9" kind="push" identifier="Display Photo" id="QWG-fm-cch"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -162,6 +163,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41f-NE-eqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="825" y="-169"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="mxI-Oo-ahz">
+            <objects>
+                <viewController id="go6-ey-6Z9" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CwH-r1-oTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="WrF-Qo-qj1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="93N-Kn-CQV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sL-4s-3jN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="S0E-K5-rB0">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="S0E-K5-rB0" secondAttribute="centerX" id="Dqr-1Z-fmE"/>
+                            <constraint firstAttribute="centerY" secondItem="S0E-K5-rB0" secondAttribute="centerY" id="WDh-N7-ydI"/>
+                            <constraint firstAttribute="trailing" secondItem="3sL-4s-3jN" secondAttribute="trailing" id="fwV-yG-C6I"/>
+                            <constraint firstItem="3sL-4s-3jN" firstAttribute="bottom" secondItem="WrF-Qo-qj1" secondAttribute="top" id="uT6-4b-0O4"/>
+                            <constraint firstItem="3sL-4s-3jN" firstAttribute="top" secondItem="93N-Kn-CQV" secondAttribute="top" id="vO5-Z7-PaO"/>
+                            <constraint firstItem="3sL-4s-3jN" firstAttribute="leading" secondItem="93N-Kn-CQV" secondAttribute="leading" id="zYb-i9-W3s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JGP-16-PKy"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="3sL-4s-3jN" id="nv4-dH-o07"/>
+                        <outlet property="spinner" destination="S0E-K5-rB0" id="sqf-hC-61p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxm-UW-O8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2865.5" y="-182.5"/>
         </scene>
     </scenes>
 </document>
