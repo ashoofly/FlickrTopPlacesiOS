@@ -19,6 +19,12 @@
     self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:thumbnailURL]];
 }
 
-
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    [self setHighlighted:NO];
+    
+    _photo = nil;
+    _imageView.image = nil;
+}
 
 @end

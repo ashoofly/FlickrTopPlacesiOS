@@ -1,5 +1,5 @@
 //
-//  FlickrThumnailsCVCCollectionViewController.m
+//  FlickrThumbnailsCVCCollectionViewController.m
 //  TopPlaces
 //
 //  Created by Angela Hsu on 8/27/15.
@@ -14,6 +14,7 @@
 #define NUM_THUMBNAILS 51
 
 @interface FlickrThumbnailsCVC () <UICollectionViewDelegateFlowLayout>
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -41,6 +42,7 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
 {
     NSURL *url = [FlickrFetcher URLforPhotosInPlace:self.placeID maxResults:NUM_THUMBNAILS];
     dispatch_queue_t fetchQ = dispatch_queue_create("flickr fetcher", NULL);
+    [self.spinner startAnimating];
     dispatch_async(fetchQ, ^{
         NSData *jsonResults = [NSData dataWithContentsOfURL: url];
         NSDictionary *propertyListResults = [NSJSONSerialization JSONObjectWithData:jsonResults options:0 error:NULL];
@@ -51,6 +53,7 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
             //NSLog(@"self.photos = %@", self.photos);
             NSLog(@"Photo count: %lu", self.photos.count);
             [self.collectionView reloadData];
+            [self.spinner stopAnimating];
         });
     });
 }

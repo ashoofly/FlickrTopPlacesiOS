@@ -1,5 +1,5 @@
 //
-//  FlickrThumnailsCVCCollectionViewController.h
+//  FlickrThumbnailsCVCCollectionViewController.h
 //  TopPlaces
 //
 //  Created by Angela Hsu on 8/27/15.

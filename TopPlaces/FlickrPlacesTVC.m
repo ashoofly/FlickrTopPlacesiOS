@@ -25,6 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITabBarItem *topPlacesIcon = [self.tabBarController.tabBar.items objectAtIndex:0];
+    UITabBarItem *recentsIcon = [self.tabBarController.tabBar.items objectAtIndex:1];
+    [topPlacesIcon initWithTitle:@"Top Places" image:[UIImage imageNamed:@"maps.png"] selectedImage:[UIImage imageNamed:@"maps_selected.png"]];
+    [recentsIcon initWithTitle:@"Recents" image:[UIImage imageNamed:@"icon-recent.png"] selectedImage:[UIImage imageNamed:@"icon-recent.png"]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
