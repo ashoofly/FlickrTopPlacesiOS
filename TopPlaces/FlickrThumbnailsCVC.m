@@ -8,8 +8,9 @@
 
 #import "FlickrThumbnailsCVC.h"
 #import "FlickrFetcher.h"
+#import "FlickrPhotoCell.h"
 
-#define NUM_THUMBNAILS 50
+#define NUM_THUMBNAILS 51
 
 @interface FlickrThumbnailsCVC () <UICollectionViewDelegateFlowLayout>
 
@@ -21,15 +22,10 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getThumbnails];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-    
-    [self getThumbnails];
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,7 +50,14 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
     dispatch_async(fetchQ, ^{
         NSData *jsonResults = [NSData dataWithContentsOfURL: url];
         NSDictionary *propertyListResults = [NSJSONSerialization JSONObjectWithData:jsonResults options:0 error:NULL];
-        NSLog(@"Flickr results = %@", propertyListResults);
+        //NSLog(@"Flickr results = %@", propertyListResults);
+        NSArray *photos = [propertyListResults valueForKeyPath:FLICKR_RESULTS_PHOTOS];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.photos = photos;
+            //NSLog(@"self.photos = %@", self.photos);
+            NSLog(@"Photo count: %lu", self.photos.count);
+            [self.collectionView reloadData];
+        });
     });
 }
 
@@ -70,10 +73,12 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    FlickrPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    
+    if (indexPath.row < self.photos.count) {
+        cell.photo = self.photos[indexPath.row];
+    }
     return cell;
 }
 

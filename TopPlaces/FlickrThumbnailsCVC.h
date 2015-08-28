@@ -11,5 +11,6 @@
 @interface FlickrThumbnailsCVC : UICollectionViewController
 
 @property (strong, nonatomic) NSString *placeID;
+@property (strong, nonatomic) NSArray * photos;
 
 @end

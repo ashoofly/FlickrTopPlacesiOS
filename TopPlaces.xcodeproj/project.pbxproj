@@ -18,6 +18,8 @@
 		A28ADC4E1B8E1D120045DE6F /* FlickrPlacesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC4D1B8E1D120045DE6F /* FlickrPlacesTVC.m */; };
 		A28ADC511B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC501B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m */; };
 		A28ADC541B8F67AB0045DE6F /* FlickrThumbnailsCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC531B8F67AB0045DE6F /* FlickrThumbnailsCVC.m */; };
+		A28ADC6C1B8FC38B0045DE6F /* FlickrPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A28ADC6B1B8FC38B0045DE6F /* FlickrPhotoCell.m */; };
+		A28ADC6E1B90AD340045DE6F /* ipad.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A28ADC6D1B90AD340045DE6F /* ipad.Storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		A28ADC501B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesFlickrPhotosTVC.m; sourceTree = "<group>"; };
 		A28ADC521B8F67AB0045DE6F /* FlickrThumbnailsCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrThumbnailsCVC.h; sourceTree = "<group>"; };
 		A28ADC531B8F67AB0045DE6F /* FlickrThumbnailsCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrThumbnailsCVC.m; sourceTree = "<group>"; };
+		A28ADC6A1B8FC38B0045DE6F /* FlickrPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoCell.h; sourceTree = "<group>"; };
+		A28ADC6B1B8FC38B0045DE6F /* FlickrPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoCell.m; sourceTree = "<group>"; };
+		A28ADC6D1B90AD340045DE6F /* ipad.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ipad.Storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +105,9 @@
 				A28ADC501B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m */,
 				A28ADC521B8F67AB0045DE6F /* FlickrThumbnailsCVC.h */,
 				A28ADC531B8F67AB0045DE6F /* FlickrThumbnailsCVC.m */,
+				A28ADC6D1B90AD340045DE6F /* ipad.Storyboard */,
+				A28ADC6A1B8FC38B0045DE6F /* FlickrPhotoCell.h */,
+				A28ADC6B1B8FC38B0045DE6F /* FlickrPhotoCell.m */,
 				A28ADC4B1B8E19DD0045DE6F /* Flickr Fetcher */,
 				A28ADC2B1B8E17D20045DE6F /* Main.storyboard */,
 				A28ADC2E1B8E17D20045DE6F /* Images.xcassets */,
@@ -229,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28ADC6E1B90AD340045DE6F /* ipad.Storyboard in Resources */,
 				A28ADC2D1B8E17D20045DE6F /* Main.storyboard in Resources */,
 				A28ADC321B8E17D20045DE6F /* LaunchScreen.xib in Resources */,
 				A28ADC2F1B8E17D20045DE6F /* Images.xcassets in Resources */,
@@ -253,6 +262,7 @@
 				A28ADC541B8F67AB0045DE6F /* FlickrThumbnailsCVC.m in Sources */,
 				A28ADC2A1B8E17D20045DE6F /* ViewController.m in Sources */,
 				A28ADC271B8E17D20045DE6F /* AppDelegate.m in Sources */,
+				A28ADC6C1B8FC38B0045DE6F /* FlickrPhotoCell.m in Sources */,
 				A28ADC4A1B8E19D60045DE6F /* FlickrFetcher.m in Sources */,
 				A28ADC241B8E17D20045DE6F /* main.m in Sources */,
 				A28ADC511B8E1EAA0045DE6F /* TopPlacesFlickrPhotosTVC.m in Sources */,
