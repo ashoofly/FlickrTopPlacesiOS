@@ -86,11 +86,16 @@
 - (UIImage *)image {
     return self.imageView.image;
 }
-
+	
 - (void)setImage:(UIImage *)image {
-    self.scrollView.zoomScale = 1.0;
+    float zoomScale = MIN(self.view.bounds.size.width / self.imageView.image.size.width, self.view.bounds.size.height / self.imageView.image.size.height);
+    self.scrollView.zoomScale = zoomScale;
+   // self.scrollView.zoomScale = 1.0;
+
     self.imageView.image = image;
     self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+
+    //CGRectMake(0,0, self.view.bounds.size.width, self.view.bounds.size.height);
     
     
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
@@ -100,6 +105,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.scrollView addSubview:self.imageView];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
+
 }
 
 

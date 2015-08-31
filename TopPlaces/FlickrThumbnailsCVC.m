@@ -66,7 +66,7 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return NUM_THUMBNAILS;
+    return MIN(self.photos.count, NUM_THUMBNAILS);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
