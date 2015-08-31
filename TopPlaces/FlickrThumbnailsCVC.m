@@ -13,7 +13,7 @@
 
 #define NUM_THUMBNAILS 51
 
-@interface FlickrThumbnailsCVC () <UICollectionViewDelegateFlowLayout>
+@interface FlickrThumbnailsCVC () <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
@@ -80,6 +80,17 @@ static NSString * const reuseIdentifier = @"thumbnail_photo";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id detail = self.splitViewController.viewControllers[1];
+    if ([detail isKindOfClass:[UINavigationController class]]) {
+        detail = [((UINavigationController *)detail).viewControllers firstObject];
+    }
+    if ([detail isKindOfClass:[ImageViewController class]]) {
+        [self prepareImageViewController:detail toDisplayPhoto:self.photos[indexPath.row]];
+    }
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
