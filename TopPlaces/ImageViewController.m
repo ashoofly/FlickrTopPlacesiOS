@@ -19,7 +19,7 @@
 
 - (void)setScrollView:(UIScrollView *)scrollView {
     _scrollView = scrollView;
-    _scrollView.minimumZoomScale = 0.2;
+    _scrollView.minimumZoomScale = 0.5;
     _scrollView.maximumZoomScale = 2.0;
     _scrollView.delegate = self;
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;

@@ -15,8 +15,13 @@
 {
     if (_photo != photo) _photo = photo;
     NSURL *thumbnailURL = [FlickrFetcher URLforPhoto:photo format:FlickrPhotoFormatSquare];
-    
-    self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:thumbnailURL]];
+    dispatch_queue_t fetchQ = dispatch_queue_create("flickr fetcher", NULL);
+    dispatch_async(fetchQ, ^{
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:thumbnailURL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+        });
+    });
 }
 
 - (void)prepareForReuse {
